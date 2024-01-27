@@ -1,0 +1,27 @@
+# ~/.gitconfig
+# zoug
+#
+# git configuration and aliases
+#
+[user]
+    email = zoug@protonmail.ch
+    name = yzoug
+[alias]
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    adog = log --graph --oneline --decorate --all
+    fl = log -u # file log
+    dlc = diff --cached HEAD^ # diff last commit
+    conflict = diff --name-only --diff-filter=U
+    co = checkout
+    ci = commit
+    br = branch
+    st = status
+    bl = blame
+[rebase]
+    autosquash = true
+[init]
+    defaultBranch = main
+[push]
+    autoSetupRemote = true

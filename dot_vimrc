@@ -1,0 +1,193 @@
+""" ~/.vimrc
+""" zoug
+""" vim config
+
+set nocompatible " use vim, not vi
+
+""" vundle
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+"" syntax highlighting and completion
+Plugin 'rust-lang/rust.vim'
+"Plugin 'maralla/completor.vim'
+"Plugin 'vim-syntastic/syntastic'
+
+Plugin 'cespare/vim-toml'
+Plugin 'vim-airline/vim-airline'
+Plugin 'takac/vim-hardtime'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'tpope/vim-commentary'
+"Plugin 'vim-perl/vim-perl'
+
+"" git
+"Plugin 'tpope/vim-fugitive'
+
+"" files tree
+Plugin 'scrooloose/nerdtree'
+
+"" Python autocompletion
+"Plugin 'davidhalter/jedi-vim'
+
+"" treat these snippets as reference
+"Plugin 'honza/vim-snippets'
+
+call vundle#end()
+
+"" general
+filetype plugin indent on       " language-dependant indenting and filetype detection
+syntax enable                   " switch syntax highlighting on
+let mapleader = ' '             " <Leader> in the following remaps is ' '
+set history=50                  " keep 50 lines of command line history
+set encoding=utf-8              " utf-8 encoding
+" opening a file doesn't close the current buffer, it hides it
+" makes it possible to jump from file to file without writing the changes
+set hidden
+" suffixes that get lower priority when doing tab completion for filenames
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg,.pdf
+set wildmenu                    " autocompletion in vim commands now displays the matches
+
+"" GUI
+set guiheadroom=0               " no gui headroom (no need for window decorations with a WM)
+
+"" remaps (except for plugins, see below)
+" don't skip lines when going up and down, even if they're only visual lines
+nnoremap j gj
+nnoremap k gk
+" right/left arrows go previous/next buffer
+nnoremap <Left> :bp<CR>
+nnoremap <Right> :bn<CR>
+" delete current buffer
+nnoremap <Leader>q :bd<CR>
+" executes the current file
+nnoremap <Leader>x :!%:p<CR>
+" disable hightlight
+nnoremap <Leader>h :noh<CR>
+
+" easier navigation between splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+"" UI
+set backspace=indent,eol,start  " allow backspacing in insert mode over indents, EOL (eol), and text inserted before (start)
+set ruler                       " show the cursor position at all times
+set number                      " display line numbers
+"set relativenumber             " display them relatively to where I am
+"set cursorline                 " highlight current line
+set showcmd                     " display partial commands on bottom line
+set mouse=a                     " enable mouse
+set visualbell t_vb=            " use the visualbell, make it do nothing
+set lazyredraw                  " don't redraw screen in the middle of macros
+set showmatch                   " highlight matching parenthesis/bracket/...
+set laststatus=2                " status bar always visible
+set list                        " display unprintable characters
+set listchars=tab:•\ ,trail:•,extends:»,precedes:« " unprintable chars mapping
+
+"" tabs
+set expandtab                   " convert tabs to spaces
+set tabstop=4                   " <Tab> rendered as 4 spaces
+set softtabstop=4               " 4 spaces inserted when hitting <Tab>
+set shiftwidth=4                " number of spaces to use for each indent (auto or with >> etc)
+set shiftround                  " round indent to multiple of shiftwidth
+
+"" search
+set incsearch                   " do incremental searching
+set hlsearch                    " switch on highlighting the last used search pattern.
+
+"" splits
+" open new split panes to right and bottom
+set splitbelow
+set splitright
+set equalalways                 " equalize splits. easiest way to resize: left mouse drag
+
+augroup config
+    autocmd!
+    autocmd FileType text setlocal textwidth=78
+
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+                \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+                \   exe "normal! g`\"" |
+                \ endif
+
+    " disables flashing of screen for gvim (done earlier for vim)
+    autocmd GUIEnter * set visualbell t_vb=
+augroup END
+
+
+"" colorscheme
+" see /usr/share/vim/vim74/colors for the vim-colorsamplerpack with the
+" 100 most popular colorschemes. Also see ~/.vim/colors
+" flattened uses the solarized colors without the needlessly complicated setup
+"colorscheme flattened_dark
+set background=dark
+
+"" Calcurse
+" automatically set filetype to Markdown when opening a tmp calcurse file
+autocmd BufRead,BufNewFile /tmp/calcurse* set filetype=markdown
+autocmd BufRead,BufNewFile ~/.calcurse/notes/* set filetype=markdown
+
+""" plugin conf
+"" NERDTree:
+" show on the right
+let g:NERDTreeWinPos = "right"
+" close vim if there's only a nerdtree window
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+nnoremap <Leader>n :NERDTreeToggle<CR>
+"autocmd vimenter * NERDTree " open on startup
+
+"" Rust:
+" run rustfmt on save
+let g:autofmt_autosave = 1
+" racer executable
+let g:completor_racer_binary = 'racer'
+
+"" Gundo:
+"nnoremap <Leader>u :GundoToggle<CR>
+
+"" Airline:
+" display buffers on top of the screen when only 1 tab open
+let g:airline#extensions#tabline#enabled=1
+" symbols
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.dirty='⚡'
+
+"" HardTime:
+let g:hardtime_default_on = 0 " we want it off by default
+nnoremap <Leader>t <Esc>:HardTimeToggle<CR>
+
+"" Syntastic:
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+"" Ultisnips:
+"let g:UltiSnipsEnableSnipMate=0
+"let g:UltiSnipsExpandTrigger='<tab>'
+"let g:UltiSnipsListSnippets='<c-tab>'
+"let g:UltiSnipsJumpForwardTrigger='<tab>'
+"let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+""let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips/'
+"" line below makes ~/.vim/UltiSnips ONLY directory where snippets
+"" are looked for, so no 3rd party snippet is loaded (add them there manually)
+"let g:UltiSnipsSnippetDirectories=$HOME.'/.vim/UltiSnips'
