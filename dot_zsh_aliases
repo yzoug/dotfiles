@@ -1,0 +1,129 @@
+# ~/.zsh_aliases
+# zoug
+#
+# zsh alias definitions
+# sourced in zshrc config
+#
+
+# color and human support
+alias dmesg='dmesg -H'
+alias df='df --human-readable'
+alias free='free -h'
+alias ls='ls --classify --tabsize=0 --literal --color=auto --human-readable'
+alias sl='ls'
+alias ks='ls'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# ripgrep
+alias rg='rg --smart-case'
+alias rgg='rg --no-ignore --search-zip'
+
+# ssh
+alias ssh='TERM=xterm-256color ssh'
+## use as 'proxy user@adress' for dynamic app-level port forwarding
+alias proxy="ssh -D 5900"
+## then 'socks' to open chromium with socks proxy through port 5900
+alias socks="chromium --proxy-server='socks5://localhost:5900'"
+
+# cmdline
+alias h='history | tail'
+alias hg='history | grep '
+alias vi='vim'
+alias less='less -RQ'
+alias rcp='rsync -P --recursive'
+alias md='mkdir -p'
+alias l='ls -lrth'
+alias ll='ls -lArth'
+
+# sudo
+alias svim='sudo vim'
+alias fdisk="sudo fdisk"
+alias fuck='sudo !!'
+
+# cd
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias towork='cd ~/work'
+alias tominac='cd ~/work/minac/minac'
+
+# protection
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -I'
+
+# tar aliases
+alias tarx='tar -xvf'
+alias tarc='tar -cvf'
+alias targz='tar -zxvf'
+alias tarbz2='tar -jxvf'
+
+# global aliases (usable anywhere on commandline)
+alias -g NUL='&> /dev/null'
+alias -g T='| tail -f'
+alias -g L='| less'
+alias -g G='| grep'
+
+# pacman aliases (from wiki then me)
+## Synchronize with repositories and then upgrade packages that are out of date on the local system.
+alias pacupg='sudo pacman -Syu'
+## Download specified package(s) as .tar.xz ball
+alias pacdl='pacman -Sw'
+## Install specific package(s) from the repositories
+alias pacin='sudo pacman -S'
+## Install specific package not from the repositories but from a file 
+alias pacins='sudo pacman -U'
+## Remove the specified package(s), retaining its configuration(s) and required dependencies
+alias pacre='sudo pacman -R'
+## Remove the specified package(s), its configuration(s) and unneeded dependencies
+alias pacrem='sudo pacman -Rns'
+## Display information about a given package in the repositories
+alias pacrep='pacman -Si'
+## Search for package(s) in the repositories
+alias pacreps='pacman -Ss'
+## Display information about a given package in the local database
+alias pacloc='pacman -Qi'
+## Search for package(s) in the local database
+alias paclocs='pacman -Qs'
+## List all packages which are orphaned
+alias paclo='pacman -Qdt'
+## Clean cache - delete all the package files in the cache
+alias pacc='sudo pacman -Scc'
+## List all files installed by a given package
+alias paclf='pacman -Ql'
+## Show package(s) owning the specified file(s)
+alias pacown='pacman -Qo'
+## Mark one or more installed packages as explicitly installed 
+alias pacexpl='pacman -D --asexp'
+## Mark one or more installed packages as non explicitly installed
+alias pacimpl='pacman -D --asdep'
+## Update and refresh the local package and ABS databases against repositories
+alias pacupd='sudo pacman -Sy && sudo abs'
+## Install given package(s) as dependencies
+alias pacinsd='sudo pacman -S --asdeps'
+## Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
+alias pacmir='sudo pacman -Syy'
+## Remove packages that aren't needed (and not installed directly)
+alias rmnotneeded='sudo pacman -Rscn $(pacman -Qdtq)'
+## Tail last few pacman logs
+alias paclog='tail -n 40 /var/log/pacman.log'
+## List packages installed from AUR
+alias paclistaur='pacman -Qemq'
+
+# tmux
+alias tmuxn="tmux new -s"
+alias tmuxa="tmux attach -t"
+
+# gnupg
+alias gpge='gpg --encrypt'
+alias gpgd='gpg --decrypt'
+
+# misc
+alias cme='crackmapexec'
+alias fehs='feh --fullscreen --auto-zoom --draw-filename' #feh -FZd
+alias pinball='wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Microsoft\ Games/Pinball/pinball.exe'
+alias zzz='sudo systemctl suspend'
+alias talk='espeak -v fr-fr'

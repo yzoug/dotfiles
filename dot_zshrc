@@ -1,0 +1,135 @@
+# ~/.zshrc
+# zoug
+#
+# zsh configuration file
+#
+
+# The following lines were added by compinstall
+zstyle ':completion:*' completer _complete _ignored _approximate
+zstyle ':completion:*' rehash true
+zstyle ':completion:*' max-errors 1
+zstyle :compinstall filename '~/.zshrc'
+
+autoload -Uz compinit
+autoload -U colors
+compinit
+colors
+
+# these are replaced by starship in my setup
+#autoload -U promptinit
+#promptinit
+# End of lines added by compinstall
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=100000
+SAVEHIST=100000
+setopt appendhistory
+setopt autocd
+setopt completealiases
+unsetopt beep
+bindkey -v
+# End of lines configured by zsh-newuser-install
+
+# setopts
+# see `man zshoptions`
+setopt VI
+setopt nocorrectall
+setopt always_last_prompt
+setopt always_to_end
+setopt auto_list
+setopt auto_param_keys
+setopt auto_param_slash
+setopt auto_remove_slash
+setopt no_bash_auto_list
+setopt complete_aliases
+setopt complete_in_word
+setopt glob_complete
+setopt hash_list_all
+setopt list_ambiguous
+setopt no_list_beep
+setopt list_packed
+setopt no_list_rows_first
+setopt list_types
+setopt menu_complete
+setopt rec_exact
+setopt extended_history
+# ignore duplicate commands in history
+setopt hist_ignore_all_dups
+# don't save commands preceded with space
+setopt hist_ignore_space
+
+# aliases
+source ~/.zsh_aliases
+
+# allows for easy config edits
+# conf x vim edits first .xinitrc, then .vimrc
+conf() {
+    while [[ -n $1 ]] ; do
+        case $1 in
+            alias)      vim ~/.zsh_aliases && source ~/.zsh_aliases ;;
+            alacritty)  vim ~/.config/alacritty/alacritty.toml ;;
+            bspwm)      vim ~/.config/bspwm/bspwmrc ;;
+            conky)      vim ~/.config/conky/conky.conf ;;
+            dns)        svim /etc/resolv.conf ;;
+            dunst)      vim ~/.config/dunst/dunstrc ;;
+            env)        svim /etc/environment ;;
+            fstab)      svim /etc/fstab ;;
+            git)        vim ~/.gitconfig ;;
+            grub)       svim /etc/default/grub ;;
+            hosts)      svim /etc/hosts ;;
+            mc)         vim ~/.mc/config.json ;;
+            minio)      vim ~/.mc/config.json ;;
+            mpd)        vim ~/.config/mpd/mpd.conf ;;
+            ncmpcpp)    vim ~/.ncmpcpp/config ;;
+            pacman)     svim /etc/pacman.conf ;;
+            polybar)    vim ~/.config/polybar/config ;;
+            profile)    svim /etc/profile ;;
+            ssh)        vim ~/.ssh/config ;;
+            starship)   vim ~/.config/starship.toml ;;
+            sxhkd)      vim ~/.config/sxhkd/sxhkdrc && pkill -USR1 -x sxhkd ;;
+            tmux)       vim ~/.tmux.conf ;;
+            vim)        vim ~/.vimrc ;;
+            x)          vim ~/.xinitrc ;;
+            xres)       vim ~/.Xresources && xrdb ~/.Xresources ;;
+            youtube-dl) vim ~/.config/youtube-dl/config ;;
+            zprofile)   vim ~/.zprofile ;;
+            zsh)        vim ~/.zshrc && source ~/.zshrc ;;
+            *)          vim ~/bin/$1 && [[ -f ~/bin/$1 ]] && chmod +x ~/bin/$1;;
+        esac
+        shift
+    done
+}
+
+# env variables are all set in /etc/environment (`conf env`)
+# path is handled in /etc/profile (`conf profile`)
+
+# easily set brightness
+brightness() {
+    echo "$1" | sudo tee /sys/class/backlight/intel_backlight/brightness
+}
+brightnessmax() {
+    cat /sys/class/backlight/intel_backlight/max_brightness | sudo tee /sys/class/backlight/intel_backlight/brightness
+}
+
+# displays random fortune with cowsay and colored by lolcat
+#fortune | cowsay | lolcat
+fastfetch
+
+# zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions/)
+# override default strategy for zsh-autosuggestions, then source the file
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# starship prompt
+eval "$(starship init zsh)"
+
+# manual prompt
+# see man zshmisc for details: $' ' is the delimiter, %~ means current path, %F{x} %f means apply color x until %f.
+#PS1=$'%M %F{red}»%f %~ %F{red}»%f '
+# right prompt contains git info
+#source ~/.dotfiles/git-prompt.sh
+#setopt PROMPT_SUBST ; RPS1='%F{red}«%f$(__git_ps1 " (%s)") %F{red}«%f'
+
+# if using promptinit:
+#prompt walters
