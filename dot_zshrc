@@ -118,8 +118,9 @@ fastfetch
 
 # zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions/)
 # override default strategy for zsh-autosuggestions, then source the file
+# package must be installed
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # starship prompt
 eval "$(starship init zsh)"
