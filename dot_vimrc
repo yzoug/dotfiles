@@ -4,41 +4,6 @@
 
 set nocompatible " use vim, not vi
 
-""" vundle
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-
-"" syntax highlighting and completion
-Plugin 'rust-lang/rust.vim'
-"Plugin 'maralla/completor.vim'
-"Plugin 'vim-syntastic/syntastic'
-
-Plugin 'cespare/vim-toml'
-Plugin 'vim-airline/vim-airline'
-Plugin 'takac/vim-hardtime'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-"Plugin 'SirVer/ultisnips'
-"Plugin 'tpope/vim-commentary'
-"Plugin 'vim-perl/vim-perl'
-
-"" git
-"Plugin 'tpope/vim-fugitive'
-
-"" files tree
-Plugin 'scrooloose/nerdtree'
-
-"" Python autocompletion
-"Plugin 'davidhalter/jedi-vim'
-
-"" treat these snippets as reference
-"Plugin 'honza/vim-snippets'
-
-call vundle#end()
-
 "" general
 filetype plugin indent on       " language-dependant indenting and filetype detection
 syntax enable                   " switch syntax highlighting on
@@ -145,15 +110,6 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 nnoremap <Leader>n :NERDTreeToggle<CR>
 "autocmd vimenter * NERDTree " open on startup
 
-"" Rust:
-" run rustfmt on save
-let g:autofmt_autosave = 1
-" racer executable
-let g:completor_racer_binary = 'racer'
-
-"" Gundo:
-"nnoremap <Leader>u :GundoToggle<CR>
-
 "" Airline:
 " display buffers on top of the screen when only 1 tab open
 let g:airline#extensions#tabline#enabled=1
@@ -170,24 +126,3 @@ let g:airline_symbols.readonly = ''
 "let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
-
-"" HardTime:
-let g:hardtime_default_on = 0 " we want it off by default
-nnoremap <Leader>t <Esc>:HardTimeToggle<CR>
-
-"" Syntastic:
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-
-"" Ultisnips:
-"let g:UltiSnipsEnableSnipMate=0
-"let g:UltiSnipsExpandTrigger='<tab>'
-"let g:UltiSnipsListSnippets='<c-tab>'
-"let g:UltiSnipsJumpForwardTrigger='<tab>'
-"let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
-""let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips/'
-"" line below makes ~/.vim/UltiSnips ONLY directory where snippets
-"" are looked for, so no 3rd party snippet is loaded (add them there manually)
-"let g:UltiSnipsSnippetDirectories=$HOME.'/.vim/UltiSnips'
