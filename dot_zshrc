@@ -62,40 +62,42 @@ setopt hist_ignore_space
 # aliases
 source ~/.zsh_aliases
 
-# allows for easy config edits
+# allows for easy config edits using $EDITOR to edit files
 # conf x vim edits first .xinitrc, then .vimrc
+# special target "script" can be used to edit bin scripts (in ~/bin). E.g. "conf script hello.sh" opens ~/bin/hello.sh then marks file as executable
+# by default, edits the ".config/GIVEN_NAME/config" file
 conf() {
     while [[ -n $1 ]] ; do
         case $1 in
-            alias)      vim ~/.zsh_aliases && source ~/.zsh_aliases ;;
-            alacritty)  vim ~/.config/alacritty/alacritty.toml ;;
-            bspwm)      vim ~/.config/bspwm/bspwmrc ;;
-            conky)      vim ~/.config/conky/conky.conf ;;
-            dns)        svim /etc/resolv.conf ;;
-            dunst)      vim ~/.config/dunst/dunstrc ;;
-            env)        svim /etc/environment ;;
-            fstab)      svim /etc/fstab ;;
-            git)        vim ~/.gitconfig ;;
-            grub)       svim /etc/default/grub ;;
-            hosts)      svim /etc/hosts ;;
-            mc)         vim ~/.mc/config.json ;;
-            minio)      vim ~/.mc/config.json ;;
-            mpd)        vim ~/.config/mpd/mpd.conf ;;
-            ncmpcpp)    vim ~/.ncmpcpp/config ;;
-            pacman)     svim /etc/pacman.conf ;;
-            polybar)    vim ~/.config/polybar/config ;;
-            profile)    svim /etc/profile ;;
-            ssh)        vim ~/.ssh/config ;;
-            starship)   vim ~/.config/starship.toml ;;
-            sxhkd)      vim ~/.config/sxhkd/sxhkdrc && pkill -USR1 -x sxhkd ;;
-            tmux)       vim ~/.tmux.conf ;;
-            vim)        vim ~/.vimrc ;;
-            x)          vim ~/.xinitrc ;;
-            xres)       vim ~/.Xresources && xrdb ~/.Xresources ;;
-            youtube-dl) vim ~/.config/youtube-dl/config ;;
-            zprofile)   vim ~/.zprofile ;;
-            zsh)        vim ~/.zshrc && source ~/.zshrc ;;
-            *)          vim ~/bin/$1 && [[ -f ~/bin/$1 ]] && chmod +x ~/bin/$1;;
+            alias)      $EDITOR ~/.zsh_aliases && source ~/.zsh_aliases ;;
+            alacritty)  $EDITOR ~/.config/alacritty/alacritty.toml ;;
+            bspwm)      $EDITOR ~/.config/bspwm/bspwmrc ;;
+            conky)      $EDITOR ~/.config/conky/conky.conf ;;
+            dns)        sudo $EDITOR /etc/resolv.conf ;;
+            dunst)      $EDITOR ~/.config/dunst/dunstrc ;;
+            env)        sudo $EDITOR /etc/environment ;;
+            fstab)      sudo $EDITOR /etc/fstab ;;
+            git)        $EDITOR ~/.gitconfig ;;
+            grub)       sudo $EDITOR /etc/default/grub ;;
+            hosts)      sudo $EDITOR /etc/hosts ;;
+            mc)         $EDITOR ~/.mc/config.json ;;
+            minio)      $EDITOR ~/.mc/config.json ;;
+            mpd)        $EDITOR ~/.config/mpd/mpd.conf ;;
+            ncmpcpp)    $EDITOR ~/.ncmpcpp/config ;;
+            nvim)       $EDITOR ~/.config/nvim/init.lua ;;
+            pacman)     sudo $EDITOR /etc/pacman.conf ;;
+            profile)    sudo $EDITOR /etc/profile ;;
+            script)     shift && $EDITOR ~/bin/$1 && [[ -f ~/bin/$1 ]] && chmod +x ~/bin/$1;;
+            ssh)        $EDITOR ~/.ssh/config ;;
+            starship)   $EDITOR ~/.config/starship.toml ;;
+            sxhkd)      $EDITOR ~/.config/sxhkd/sxhkdrc && pkill -USR1 -x sxhkd ;;
+            tmux)       $EDITOR ~/.tmux.conf ;;
+            vim)        $EDITOR ~/.vimrc ;;
+            x)          $EDITOR ~/.xinitrc ;;
+            xres)       $EDITOR ~/.Xresources && xrdb ~/.Xresources ;;
+            zprofile)   $EDITOR ~/.zprofile ;;
+            zsh)        $EDITOR ~/.zshrc && source ~/.zshrc ;;
+            *)          $EDITOR ~/.config/$1/config ;;
         esac
         shift
     done
@@ -134,3 +136,9 @@ eval "$(starship init zsh)"
 
 # if using promptinit:
 #prompt walters
+
+# zoxide (smarter cd)
+eval "$(zoxide init zsh)"
+
+# direnv
+eval "$(direnv hook zsh)"

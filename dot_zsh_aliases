@@ -30,7 +30,7 @@ alias socks="chromium --proxy-server='socks5://localhost:5900'"
 # cmdline
 alias h='history | tail'
 alias hg='history | grep '
-alias vi='vim'
+alias vi='nvim'
 alias less='less -RQ'
 alias rcp='rsync -P --recursive'
 alias md='mkdir -p'
@@ -39,6 +39,7 @@ alias ll='ls -lArth'
 
 # sudo
 alias svim='sudo vim'
+alias svi='sudo nvim'
 alias fdisk="sudo fdisk"
 alias fuck='sudo !!'
 
@@ -47,8 +48,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
-alias towork='cd ~/work'
-alias tominac='cd ~/work/minac/minac'
+alias cd='z' # use zoxide instead of cd
 
 # protection
 alias cp='cp -i'
