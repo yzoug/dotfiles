@@ -1,0 +1,103 @@
+[font]
+size = 16.0
+
+[font.bold]
+family = "Source Code Pro"
+style = "Bold"
+
+[font.bold_italic]
+family = "Source Code Pro"
+style = "Bold Italic"
+
+[font.italic]
+family = "Source Code Pro"
+style = "Italic"
+
+[font.normal]
+family = "Source Code Pro"
+style = "Regular"
+
+# TokyoNight Alacritty Colors
+# from https://github.com/folke/tokyonight.nvim/blob/main/extras/alacritty/tokyonight_moon.toml
+# Default colors
+[colors.primary]
+background = '#222436'
+foreground = '#c8d3f5'
+
+#[colors.cursor]
+#cursor = '#c8d3f5'
+#text = '#222436'
+
+# Normal colors
+[colors.normal]
+black = '#1b1d2b'
+red = '#ff757f'
+green = '#c3e88d'
+yellow = '#ffc777'
+blue = '#82aaff'
+magenta = '#c099ff'
+cyan = '#86e1fc'
+white = '#828bb8'
+
+# Bright colors
+[colors.bright]
+black = '#444a73'
+red = '#ff757f'
+green = '#c3e88d'
+yellow = '#ffc777'
+blue = '#82aaff'
+magenta = '#c099ff'
+cyan = '#86e1fc'
+white = '#c8d3f5'
+
+# Indexed Colors
+[[colors.indexed_colors]]
+index = 16
+color = '#ff966c'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#c53b53'
+
+# Colors (minicyan nvim theme)
+# Source https://github.com/echasnovski/mini.nvim/blob/main/colors/minicyan.lua
+# Used this template to get correspondence between base16 colors and the ones defined by alacritty: https://ralsina.me/weblog/posts/color-coordination-using-base16/
+## Base16 {{scheme-name}} - alacritty color config
+## {{scheme-author}}
+#colors:
+#  # Default colors
+#  primary:
+#    background: '0x{{base00-hex}}'
+#    foreground: '0x{{base05-hex}}'
+#
+#  # Colors the cursor will use if `custom_cursor_colors` is true
+#  cursor:
+#    text: '0x{{base00-hex}}'
+#    cursor: '0x{{base05-hex}}'
+#
+#  # Normal colors
+#  normal:
+#    black:   '0x{{base00-hex}}'
+#    red:     '0x{{base08-hex}}'
+#    green:   '0x{{base0B-hex}}'
+#    yellow:  '0x{{base0A-hex}}'
+#    blue:    '0x{{base0D-hex}}'
+#    magenta: '0x{{base0E-hex}}'
+#    cyan:    '0x{{base0C-hex}}'
+#    white:   '0x{{base05-hex}}'
+
+# Default colors
+#[colors.primary]
+#background = '#0a2a2a'
+#foreground = '#d0d0d0'
+#
+## Normal colors
+#[colors.normal]
+#black   = '#0a2a2a'
+#red     = '#ebcd91'
+#green   = '#82e3ba'
+#yellow  = '#209870'
+#blue    = '#a9d4ff'
+#magenta = '#ffb9e5'
+#cyan    = '#bb6d9b'
+#white   = '#d0d0d0'
