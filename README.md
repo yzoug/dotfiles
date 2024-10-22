@@ -12,6 +12,17 @@ Hello! These are my dotfiles. Here is some of the software I use:
 
 Some of these configs are shamelessly stolen on the Internet over the years, other I wrote myself. I *sometimes try to* credit the source in a comment.
 
+## Screenshots
+
+![Screenshot desktop 1](https://github.com/user-attachments/assets/2b64d5f7-e72c-4cf1-a752-0f7c7740281c)
+
+Two `alacritty` terminals in floating mode. `fastfetch`, `starship`, `zsh-autosuggestions`.
+
+![Screenshot desktop 2](https://github.com/user-attachments/assets/56a2faaf-5ff7-42b1-9a1a-d245e1d2e29e)
+
+Three terminals in tiling mode. `pipes-rs`, `neovim`.
+
+
 ## Chezmoi
 
 I use [chezmoi](https://www.chezmoi.io/) to manage these files. Once installed, if you are me, you can configure a new machine by doing:
