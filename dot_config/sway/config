@@ -1,9 +1,7 @@
 # zoug's Sway config
-#
-# Read `man 5 sway` for a complete reference.
+# $(man 5 sway)
 
-### Variables
-#
+## Variables
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
@@ -14,25 +12,22 @@ set $right l
 # Your preferred terminal emulator
 set $term alacritty
 # Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
 # rofi config from sameemul-haque dotfiles
 set $menu ~/.config/rofi/launchers/launcher.sh | xargs swaymsg exec --
 
-### Output configuration
-#
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+## Output configuration
+# default wallpapers in /usr/share/backgrounds/sway/
+output * bg ~/.wallpaper.png fill
 
-### Idle configuration
-#
+## Idle configuration
 exec swayidle -w \
         timeout 300 'lockscreen.sh' \
         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
         before-sleep 'lockscreen.sh'
 
-### Input configuration
+## Input configuration
 # You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
+# `man 5 sway-input`
 # Touchpad settings
 input "type:touchpad" {
     dwt enabled
@@ -47,10 +42,10 @@ input "type:keyboard" {
     repeat_rate 50
 }
 
-### Key bindings
-#
-# Basics:
-#
+## Key bindings
+##
+## Basics:
+
 # Start a terminal
 bindsym $mod+Return exec $term
 
@@ -85,22 +80,13 @@ bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
-# Or use $mod+[up|down|left|right]
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
 
 # Move the focused window with the same, but add Shift
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
-# Ditto, with arrow keys
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+
 #
 # Workspaces:
 #
@@ -182,12 +168,6 @@ mode "resize" {
     bindsym $up resize shrink height 10px
     bindsym $right resize grow width 10px
 
-    # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
-
     # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -195,7 +175,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #
-# Personal keybindings
+# Personal key bindings
 # find keynames with wev
 #
 # Lockscreen
@@ -208,11 +188,21 @@ bindsym $mod+g exec $term -e btop
 bindsym Print exec SCREENSHOT_MODE=normal screenshot.sh
 bindsym $mod+Print exec SCREENSHOT_MODE=full screenshot.sh
 
-# Volume
-#bindsym XF86AudioMicMute exec pamixer --toggle-mute --source 737
+# Volume up and down
+bindsym XF86AudioLowerVolume exec pamixer -d 5
+bindsym XF86AudioRaiseVolume exec pamixer -i 5
+
+# Brightness up and down
+# using light: https://gitlab.com/dpeukert/light
+# set your sudoers file to allow running light as root without password
+bindsym XF86MonBrightnessDown exec sudo light -U 5
+bindsym XF86MonBrightnessUp exec sudo light -A 5
 
 # Clipboard rofi menu
 bindsym $mod+v exec ~/.config/rofi/clipboard/clipboard.sh
+
+# Play a small audio file (useful to verify volume, output...)
+bindsym $mod+b exec cvlc --play-and-exit /usr/share/sounds/freedesktop/stereo/message-new-instant.oga
 
 # Borders Tokyo night theme found here:
 # https://github.com/stronk-dev/Tokyo-Night-Linux/blob/master/.config/sway/config
@@ -224,7 +214,7 @@ client.focused #9aa5ce #16161d #c0caf5 #9aa5ce #9aa5ce
 client.focused_inactive  #16161d #16161d #c0caf5 #16161d #16161d
 client.unfocused #16161d #16161d #c0caf5 #16161d #16161d
 
-# Gaps
+## Gaps
 gaps inner 5
 gaps outer 1
 gaps top 1
@@ -232,11 +222,7 @@ gaps bottom 1
 # Hide gaps when there is only 1 window
 smart_gaps on
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-# We use waybar
+## We use waybar as the status bar
 bar {
      swaybar_command waybar
 }
@@ -245,9 +231,14 @@ bar {
 for_window [shell="xwayland"] title_format "[XWayland] %title"
 
 ## Startup execs
+#
 # Autotiling (https://github.com/nwg-piotr/autotiling)
-exec autotiling
+exec_always autotiling
 # Save clipboard history with cliphist
 exec_always wl-paste --watch cliphist store
+
+# use dex to autostart applets (Desktop Entry XDG spec)
+# autostart files are in /etc/xdg/autostart
+exec dex /etc/xdg/autostart/blueman.desktop
 
 include /etc/sway/config.d/*
