@@ -3,11 +3,13 @@
 Hello! These are my dotfiles. Here is some of the software I use:
 
 - sway as a Wayland compositor
-- wayfire as a status bar
+- waybar as a status bar
 - alacritty as a terminal emulator
 - neovim as my editor
 - zsh as my shell
+- tmux as a multiplexer
 - the Tokyo Night colorscheme
+- ArchLinux as my Linux distribution
 - starship as a shell prompt, zoxide as a cd replacement, direnv for environment vars, slurp/grim for screenshots...
 
 Some of these configs are shamelessly stolen on the Internet over the years, other I wrote myself. I *sometimes try to* credit the source in a comment.
