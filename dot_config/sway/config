@@ -65,7 +65,7 @@ floating_modifier $mod normal
 # Reload the configuration file
 bindsym $mod+Shift+c reload
 
-# Exit sway (logs you out of your Wayland session), or reboot, or poweroff
+# Exit sway, suspend, reboot, or poweroff
 bindsym $mod+Escape exec swaynag -t warning -m 'You pressed the exit shortcut. Do you want to...' \
     -B 'Poweroff?' 'systemctl poweroff' \
     -B 'Reboot?' 'systemctl reboot' \
@@ -128,7 +128,7 @@ bindsym $mod+Shift+v splitv
 
 # Switch the current container between different layout styles
 bindsym $mod+s layout stacking
-bindsym $mod+q layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # Make the current focus fullscreen
@@ -229,6 +229,15 @@ bar {
 
 # See what windows are using XWayland
 for_window [shell="xwayland"] title_format "[XWayland] %title"
+
+# Assign apps to specific workspaces
+assign [app_id="firefox"] workspace number 3
+assign [app_id="thunderbird"] workspace number 4
+assign [class="obsidian"] workspace number 5
+assign [class="1Password"] workspace number 7
+assign [app_id="Bitwarden"] workspace number 7
+assign [app_id="Slack"] workspace number 8
+assign [class="Spotify"] workspace number 9
 
 ## Startup execs
 #
