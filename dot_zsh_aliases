@@ -22,10 +22,12 @@ alias rgg='rg --no-ignore --search-zip'
 
 # ssh
 alias ssh='TERM=xterm-256color ssh'
-## use as 'proxy user@adress' for dynamic app-level port forwarding
-alias proxy="ssh -D 5900"
+## use as 'portfwd user@adress' for dynamic app-level port forwarding
+alias portfwd="ssh -D 5900"
 ## then 'socks' to open chromium with socks proxy through port 5900
 alias socks="chromium --proxy-server='socks5://localhost:5900'"
+## http proxy
+alias proxy="chromium --proxy-server='http://localhost:8090'"
 
 # cmdline
 alias h='history | tail'
