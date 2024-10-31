@@ -58,6 +58,8 @@ setopt extended_history
 setopt hist_ignore_all_dups
 # don't save commands preceded with space
 setopt hist_ignore_space
+# share history between shells
+setopt share_history
 
 # aliases
 source ~/.zsh_aliases
