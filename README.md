@@ -9,10 +9,11 @@ Hello! These are my dotfiles. Here is some of the software I use:
 - zsh as my shell
 - tmux as a multiplexer
 - the Tokyo Night colorscheme
+- the Adobe Source Code Pro "nerd" font (ttf-sourcecodepro-nerd)
 - ArchLinux as my Linux distribution
 - starship as a shell prompt, zoxide as a cd replacement, direnv for environment vars, slurp/grim for screenshots...
 
-Some of these configs are shamelessly stolen on the Internet over the years, other I wrote myself. I *sometimes try to* credit the source in a comment.
+Some of these configs are shamelessly stolen on the Internet over the years, others I wrote myself. I *sometimes try to* credit the source in a comment, or for recent changes in the git commit.
 
 ## Screenshots
 
@@ -23,7 +24,6 @@ Two `alacritty` terminals in floating mode. `fastfetch`, `starship`, `zsh-autosu
 ![Screenshot desktop 2](https://github.com/user-attachments/assets/56a2faaf-5ff7-42b1-9a1a-d245e1d2e29e)
 
 Three terminals in tiling mode. `pipes-rs`, `neovim`.
-
 
 ## Chezmoi
 
