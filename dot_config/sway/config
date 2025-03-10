@@ -17,7 +17,7 @@ set $menu ~/.config/rofi/launchers/launcher.sh | xargs swaymsg exec --
 
 ## Output configuration
 # default wallpapers in /usr/share/backgrounds/sway/
-output * bg ~/.wallpaper.png fill
+output * bg ~/.wallpaper.jpg fill
 
 ## Idle configuration
 exec swayidle -w \
