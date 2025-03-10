@@ -3,9 +3,10 @@
 #
 # git configuration and aliases
 #
+
 [user]
-    email = zoug@protonmail.ch
-    name = yzoug
+    email = git@zoug.fr
+    name = Yassine Zouggari
 [alias]
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
@@ -19,15 +20,60 @@
     br = branch
     st = status
     bl = blame
-[rebase]
-    autosquash = true
 [init]
     defaultBranch = main
+
+# I like this default, but it breaks automated git clones when my SSH key isn't loaded
+#[url "ssh://git@github.com/"]
+#	insteadOf = https://github.com/
+
+# the following was taken from this great article:
+# https://blog.gitbutler.com/how-git-core-devs-configure-git/
+# clearly makes git better
+
+[column]
+    ui = auto
+[branch]
+    sort = -committerdate
+[tag]
+    sort = version:refname
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
 [push]
-   autoSetupRemote = true
-#[commit]
-#    gpgsign = true
+    autoSetupRemote = true
+    default = simple
+    followTags = true
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
 
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
+# why the hell not?
 
+[help]
+    autocorrect = prompt
+[commit]
+    verbose = true
+[rerere]
+    enabled = true
+    autoupdate = true
+[core]
+    excludesfile = ~/.gitignore
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
+
+# a matter of taste (uncomment if you dare)
+
+[core]
+    # fsmonitor = true
+    # untrackedCache = true
+[merge]
+    # (just 'diff3' if git version < 2.3)
+    conflictstyle = zdiff3 
+[pull]
+    rebase = true
