@@ -80,7 +80,7 @@ conf() {
     while [[ -n $1 ]] ; do
         case $1 in
             alias)      CONFEDITOR ~/.zsh_aliases && source ~/.zsh_aliases  ;;
-            alacritty)  $CONFEDITOR ~/.config/alacritty/alacritty.toml ;;
+            alacritty)  CONFEDITOR ~/.config/alacritty/alacritty.toml ;;
             dns)        sudo $EDITOR /etc/resolv.conf ;;
             dunst)      CONFEDITOR ~/.config/dunst/dunstrc ;;
             env)        sudo $EDITOR /etc/environment ;;
