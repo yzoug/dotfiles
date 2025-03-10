@@ -231,12 +231,12 @@ bar {
 for_window [shell="xwayland"] title_format "[XWayland] %title"
 
 # Assign apps to specific workspaces
+# get app_id or class using: swaymsg -t get_tree
+assign [class="Vivaldi-stable"] workspace number 3
 assign [app_id="firefox"] workspace number 3
 assign [app_id="thunderbird"] workspace number 4
 assign [class="obsidian"] workspace number 5
-assign [class="1Password"] workspace number 7
-assign [app_id="Bitwarden"] workspace number 7
-assign [app_id="Slack"] workspace number 8
+assign [class="Bitwarden"] workspace number 7
 assign [class="Spotify"] workspace number 9
 
 ## Startup execs
