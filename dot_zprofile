@@ -1,0 +1,15 @@
+# from https://wiki.archlinux.org/title/Sway#Automatically_on_TTY_login
+if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] ; then
+    exec sway
+fi
+
+# added this drop-in file for automatic getty login
+# adapted from https://wiki.archlinux.org/title/Silent_boot#agetty
+# and https://wiki.archlinux.org/title/Getty#Virtual_console
+# add with: systemctl edit getty@tty1 --drop-in=autologin.conf
+#
+#[Service]
+#Type=simple
+#Environment=XDG_SESSION_TYPE=wayland
+#ExecStart=
+#ExecStart=-/sbin/agetty --skip-login --nonewline --noissue --autologin MY_USERNAME --noclear %I $TERM
