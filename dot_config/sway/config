@@ -69,8 +69,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Escape exec swaynag -t warning -m 'You pressed the exit shortcut. Do you want to...' \
     -B 'Poweroff?' 'systemctl poweroff' \
     -B 'Reboot?' 'systemctl reboot' \
-    -B 'Suspend?' 'systemctl suspend' \
-    -B 'Exit sway?' 'swaymsg exit'
+    -B 'Suspend?' 'systemctl suspend'
 
 #
 # Moving around:
@@ -188,15 +187,20 @@ bindsym $mod+g exec $term -e btop
 bindsym Print exec SCREENSHOT_MODE=normal screenshot.sh
 bindsym $mod+Print exec SCREENSHOT_MODE=full screenshot.sh
 
-# Volume up and down
+# Volume up, down and mute
 bindsym XF86AudioLowerVolume exec pamixer -d 5
 bindsym XF86AudioRaiseVolume exec pamixer -i 5
+bindsym XF86AudioMute exec pamixer -t
 
-# Brightness up and down
-# using light: https://gitlab.com/dpeukert/light
-# set your sudoers file to allow running light as root without password
-bindsym XF86MonBrightnessDown exec sudo light -U 5
-bindsym XF86MonBrightnessUp exec sudo light -A 5
+# Monitor brightness
+bindsym XF86MonBrightnessDown exec brightnessctl -c backlight s 10%-
+bindsym XF86MonBrightnessUp exec brightnessctl -c backlight s +10%
+# Keyboard brightness
+bindsym XF86KbdBrightnessDown exec brightnessctl -d asus::kbd_backlight s 1-
+bindsym XF86KbdBrightnessUp exec brightnessctl -d asus::kbd_backlight s +1
+
+# Calculator
+bindsym XF86Calculator exec qalculate-gtk
 
 # Clipboard rofi menu
 bindsym $mod+v exec ~/.config/rofi/clipboard/clipboard.sh
