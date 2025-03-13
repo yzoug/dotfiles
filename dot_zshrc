@@ -79,28 +79,30 @@ CONFEDITOR() {
 conf() {
     while [[ -n $1 ]] ; do
         case $1 in
-            alias)      CONFEDITOR ~/.zsh_aliases && source ~/.zsh_aliases  ;;
-            alacritty)  CONFEDITOR ~/.config/alacritty/alacritty.toml ;;
-            dns)        sudo $EDITOR /etc/resolv.conf ;;
-            dunst)      CONFEDITOR ~/.config/dunst/dunstrc ;;
-            env)        sudo $EDITOR /etc/environment ;;
-            fstab)      sudo $EDITOR /etc/fstab ;;
-            git)        CONFEDITOR ~/.gitconfig ;;
-            hosts)      sudo $EDITOR /etc/hosts ;;
-            mc)         $EDITOR ~/.mc/config.json ;;
-            minio)      $EDITOR ~/.mc/config.json ;;
-            nvim)       $EDITOR ~/.config/nvim/init.lua ;;
-            pacman)     sudo $EDITOR /etc/pacman.conf ;;
-            profile)    sudo $EDITOR /etc/profile ;;
-            refind)     sudo $EDITOR /boot/refind_linux.conf ;;
-            script)     shift && $EDITOR ~/bin/$1 && [[ -f ~/bin/$1 ]] && chmod +x ~/bin/$1;;
-            ssh)        $EDITOR ~/.ssh/config ;;
-            starship)   CONFEDITOR ~/.config/starship.toml ;;
-            sway)       CONFEDITOR ~/.config/sway/config && swaymsg reload ;;
-            tmux)       CONFEDITOR ~/.tmux.conf ;;
-            zprofile)   CONFEDITOR ~/.zprofile ;;
-            zsh)        CONFEDITOR ~/.zshrc && source ~/.zshrc ;;
-            *)          $EDITOR ~/.config/$1/config ;;
+            alias)        CONFEDITOR ~/.zsh_aliases && source ~/.zsh_aliases  ;;
+            alacritty)    CONFEDITOR ~/.config/alacritty/alacritty.toml ;;
+            dns)          sudo $EDITOR /etc/resolv.conf ;;
+            dunst)        CONFEDITOR ~/.config/dunst/dunstrc ;;
+            env)          sudo $EDITOR /etc/environment ;;
+            fstab)        sudo $EDITOR /etc/fstab ;;
+            git)          CONFEDITOR ~/.gitconfig ;;
+            hosts)        sudo $EDITOR /etc/hosts ;;
+            mc)           $EDITOR ~/.mc/config.json ;;
+            minio)        $EDITOR ~/.mc/config.json ;;
+            nvim)         $EDITOR ~/.config/nvim/init.lua ;;
+            pacman)       sudo $EDITOR /etc/pacman.conf ;;
+            profile)      sudo $EDITOR /etc/profile ;;
+            refind)       sudo $EDITOR /boot/refind_linux.conf ;;
+            script)       shift && $EDITOR ~/bin/$1 && [[ -f ~/bin/$1 ]] && chmod +x ~/bin/$1;;
+            ssh)          $EDITOR ~/.ssh/config ;;
+            starship)     CONFEDITOR ~/.config/starship.toml ;;
+            sway)         CONFEDITOR ~/.config/sway/config && swaymsg reload ;;
+            tmux)         CONFEDITOR ~/.tmux.conf ;;
+            waybar)       CONFEDITOR ~/.config/waybar/config && swaymsg reload ;;
+            waybar-style) CONFEDITOR ~/.config/waybar/style.css && swaymsg reload ;;
+            zprofile)     CONFEDITOR ~/.zprofile ;;
+            zsh)          CONFEDITOR ~/.zshrc && source ~/.zshrc ;;
+            *)            $EDITOR ~/.config/$1/config ;;
         esac
         shift
     done

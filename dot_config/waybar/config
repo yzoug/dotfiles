@@ -8,12 +8,12 @@
         "sway/workspaces",
     ],
     "modules-center": [
-    	"sway/window",
+        "sway/window",
     ],
     "modules-right": [
         "tray",
-	"battery",
-	"wireplumber"
+        "battery",
+        "wireplumber"
     ],
     "sway/workspaces": {
         "on-click": "activate",
@@ -106,9 +106,10 @@
     "modules-center": [
         "memory",
         "cpu",
-	"custom/ip",
+        "custom/ip",
         "network",
         "clock",
+        "mpris",
     ],
     "modules-right": [],
     "cpu": {
@@ -130,14 +131,14 @@
         "format-wifi" : "{icon} {ipaddr} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
         "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
         "format-ethernet": "󰀂",
-	"format-alt" : "󱛇",
+        "format-alt" : "󱛇",
         "format-disconnected" : "󰖪",
-	"tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-	"tooltip-format-disconnected": "Disconnected",
-	"on-click": "~/.config/rofi/wifi/wifi.sh &",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "~/.config/rofi/wifi/wifi.sh &",
         "on-click-right": "~/.config/rofi/wifi/wifinew.sh &",
-	"interval": 5
+        "interval": 5
     },
     "custom/ip": {
         "interval": "once",
@@ -146,6 +147,19 @@
         "exec": "cat /tmp/remote-ip.log 2>/dev/null || echo Click to get remote IP",
         "tooltip": false,
         "on-click": "curl -s icanhazip.com | tee /tmp/remote-ip.log && pkill -RTMIN+1 waybar",
-	"spacing": 5
+        "spacing": 5
+    },
+    "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+	"dynamic-order": ["title", "artist"],
+        "player-icons": {
+             "default": "🎵",
+             "spotify": " ",
+             "vlc": "󰕼 "
+        },
+        "status-icons": {
+             "paused": " "
+        },
     }
 }]

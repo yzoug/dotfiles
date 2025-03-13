@@ -2,7 +2,7 @@
   border: none;
   border-radius: 0;
   min-height: 0;
-  font-family: Source Code Pro;
+  font-family: SauceCodePro Nerd Font;
   font-size: 13px;
 }
 
@@ -61,7 +61,8 @@ window#waybar.hidden {
 #tray,
 #window,
 #cpu,
-#custom-ip {
+#custom-ip,
+#mpris {
   border-radius: 4px;
   margin: 6px 3px;
   padding: 6px 12px;
@@ -124,20 +125,22 @@ window#waybar.hidden {
   background-color: #f9e2af;
 }
 
+#mpris {
+  background-color: #f9e2af;
+}
+
 #network {
   background-color: #94e2d5;
   padding-right: 17px;
 }
 
 #clock {
-  font-family: Source Code Pro;
   background-color: #cba6f7;
 }
 
 #custom-power {
   background-color: #f2cdcd;
 }
-
 
 tooltip {
   border-radius: 8px;
