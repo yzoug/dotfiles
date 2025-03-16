@@ -7,9 +7,17 @@
 }
 
 window#waybar {
-  background-color: #181825;
+  background-color: #1b1d2b;
   transition-property: background-color;
   transition-duration: 0.5s;
+}
+
+window#waybar.top {
+  border-bottom: 1px solid black;
+}
+
+window#waybar.bottom {
+  border-top: 1px solid black;
 }
 
 window#waybar.hidden {

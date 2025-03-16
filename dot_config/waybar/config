@@ -49,13 +49,13 @@
         "on-click": "~/.config/rofi/launchers/misc/launcher.sh &"
     },
     "wireplumber": {
-        "format": "{icon}",
+        "format": "{icon} {volume}%",
         "format-bluetooth": "󰂰",
         "tooltip-format": "Volume : {volume}%",
         "format-muted": "󰝟",
         "format-icons": {
             "headphone": "",
-            "default": ["󰖀","󰕾"]
+            "default": ["","",""]
         },
         "on-click": "pamixer -t",
         "scroll-step": 1,
@@ -89,7 +89,7 @@
             ]
         },
         "format-full": "Charged ",
-        "interval": 5,
+        "interval": 30,
         "states": {
             "warning": 20,
             "critical": 10
@@ -115,12 +115,12 @@
     "cpu": {
         "format": "  {}",
         "on-click": "alacritty -e btop",
-        "interval": 5
+        "interval": 10
     },
     "memory": {
         "format": "  {}%",
         "on-click": "alacritty -e btop",
-        "interval": 5
+        "interval": 10
     },
     "clock": {
         "tooltip-format": "{calendar}",
@@ -138,7 +138,7 @@
         "tooltip-format-disconnected": "Disconnected",
         "on-click": "~/.config/rofi/wifi/wifi.sh &",
         "on-click-right": "~/.config/rofi/wifi/wifinew.sh &",
-        "interval": 5
+        "interval": 10
     },
     "custom/ip": {
         "interval": "once",
@@ -156,7 +156,8 @@
         "player-icons": {
              "default": "🎵",
              "spotify": " ",
-             "vlc": "󰕼 "
+             "vlc": "󰕼 ",
+             "firefox": "󰈹 ",
         },
         "status-icons": {
              "paused": " "
