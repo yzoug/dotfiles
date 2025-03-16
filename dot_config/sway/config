@@ -120,10 +120,10 @@ bindsym $mod+Tab workspace back_and_forth
 # Layout stuff:
 #
 # You can "split" the current object of your focus with
-# $mod+b or $mod+v, for horizontal and vertical splits
+# $mod+Alt+b or $mod+Alt+v, for horizontal and vertical splits
 # respectively.
-bindsym $mod+Shift+b splith
-bindsym $mod+Shift+v splitv
+bindsym $mod+Alt+b splith
+bindsym $mod+Alt+v splitv
 
 # Switch the current container between different layout styles
 bindsym $mod+s layout stacking
@@ -182,6 +182,9 @@ bindsym $mod+x exec lockscreen.sh
 
 # btop
 bindsym $mod+g exec $term -e btop
+
+# BitWarden
+bindsym $mod+Shift+b exec "swaymsg workspace number 7 && notify-send -i /usr/share/icons/hicolor/128x128/apps/bitwarden.png 'Password keymap pressed' 'Launching Bitwarden...' && bitwarden-desktop"
 
 # Screenshots
 bindsym Print exec SCREENSHOT_MODE=normal screenshot.sh
