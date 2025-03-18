@@ -78,12 +78,8 @@ window#waybar.hidden {
   color: #181825;
 }
 
+#custom-ip,
 #window {
-  color: #1e1e2e;
-  background-color: #828bb8;
-}
-
-#custom-ip {
   color: #1e1e2e;
   background-color: #828bb8;
 }
@@ -105,10 +101,7 @@ window#waybar.hidden {
   background-color: #fab387;
 }
 
-#battery {
-  background-color: #f38ba8;
-}
-
+#battery,
 #cpu {
   background-color: #f38ba8;
 }
@@ -126,13 +119,10 @@ window#waybar.hidden {
 }
 
 #backlight {
-  background-color: #fab387;
+  background-color: #94e2d5;
 }
 
-#wireplumber {
-  background-color: #f9e2af;
-}
-
+#wireplumber,
 #mpris {
   background-color: #f9e2af;
 }

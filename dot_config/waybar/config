@@ -12,6 +12,7 @@
     ],
     "modules-right": [
         "tray",
+        "backlight",
         "battery",
         "wireplumber"
     ],
@@ -59,6 +60,11 @@
         },
         "on-click": "pamixer -t",
         "scroll-step": 1,
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰛩","󱩎","󱩏","󱩐","󱩑","󱩒","󱩓","󱩔","󱩕","󱩖","󰛨"]
     },
     "battery": {
         "format": "{capacity}% {icon}",
