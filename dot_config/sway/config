@@ -210,7 +210,8 @@ bindsym $mod+Shift+m output "eDP-1" enable
 bindsym XF86Calculator exec qalculate-gtk
 
 # Clipboard rofi menu
-bindsym $mod+v exec ~/.config/rofi/clipboard/clipboard.sh
+# I no longer want this, but could in the future
+#bindsym $mod+v exec ~/.config/rofi/clipboard/clipboard.sh
 
 # Play a small audio file (useful to verify volume, output...)
 bindsym $mod+b exec cvlc --play-and-exit /usr/share/sounds/freedesktop/stereo/message-new-instant.oga
@@ -255,7 +256,8 @@ assign [class="Spotify"] workspace number 9
 # Autotiling (https://github.com/nwg-piotr/autotiling)
 exec_always autotiling
 # Save clipboard history with cliphist
-exec_always wl-paste --watch cliphist store
+# I no longer want this, but could in the future
+#exec_always wl-paste --watch cliphist store
 
 # use dex to autostart applets (Desktop Entry XDG spec)
 # autostart files are in /etc/xdg/autostart
