@@ -14,6 +14,7 @@
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     adog = log --graph --oneline --decorate --all
     fl = log -u # file log
+    dc = diff --cached
     dlc = diff --cached HEAD^ # diff last commit
     conflict = diff --name-only --diff-filter=U
     co = checkout
