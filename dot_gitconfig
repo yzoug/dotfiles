@@ -7,6 +7,7 @@
 [user]
     email = git@zoug.fr
     name = Yassine Zouggari
+    signingkey = ~/.ssh/ionos_id_ed25519.pub
 [alias]
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
@@ -26,6 +27,10 @@
 # I like this default, but it breaks automated git clones when my SSH key isn't loaded
 #[url "ssh://git@github.com/"]
 #	insteadOf = https://github.com/
+[gpg]
+    format = ssh
+[commit]
+    gpgsign = true
 
 # the following was taken from this great article:
 # https://blog.gitbutler.com/how-git-core-devs-configure-git/
