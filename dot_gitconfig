@@ -24,10 +24,9 @@
     bl = blame
 [init]
     defaultBranch = main
-
-# I like this default, but it breaks automated git clones when my SSH key isn't loaded
-#[url "ssh://git@github.com/"]
-#	insteadOf = https://github.com/
+# automatically use SSH for github repos
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
 [gpg]
     format = ssh
 [commit]
