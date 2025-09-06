@@ -202,6 +202,10 @@ bindsym XF86MonBrightnessUp exec brightnessctl -c backlight s +10%
 bindsym XF86KbdBrightnessDown exec brightnessctl -d asus::kbd_backlight s 1-
 bindsym XF86KbdBrightnessUp exec brightnessctl -d asus::kbd_backlight s +1
 
+# Turn screen laptop on or off
+bindsym $mod+m output "eDP-1" disable
+bindsym $mod+Shift+m output "eDP-1" enable
+
 # Calculator
 bindsym XF86Calculator exec qalculate-gtk
 
