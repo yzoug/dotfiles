@@ -96,6 +96,7 @@ conf() {
             script)       shift && $EDITOR ~/bin/$1 && [[ -f ~/bin/$1 ]] && chmod +x ~/bin/$1;;
             ssh)          $EDITOR ~/.ssh/config ;;
             starship)     CONFEDITOR ~/.config/starship.toml ;;
+            sudo)         sudo visudo ;;
             sway)         CONFEDITOR ~/.config/sway/config && swaymsg reload ;;
             tmux)         CONFEDITOR ~/.tmux.conf ;;
             waybar)       CONFEDITOR ~/.config/waybar/config && swaymsg reload ;;
