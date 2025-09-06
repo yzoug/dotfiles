@@ -260,7 +260,9 @@ exec_always autotiling
 #exec_always wl-paste --watch cliphist store
 
 # use dex to autostart applets (Desktop Entry XDG spec)
-# autostart files are in /etc/xdg/autostart
 exec dex /etc/xdg/autostart/blueman.desktop
+exec dex /etc/xdg/autostart/gnome-keyring-pkcs11.desktop
+exec dex /etc/xdg/autostart/gnome-keyring-secrets.desktop
+exec dex ~/.config/autostart/Nextcloud.desktop
 
 include /etc/sway/config.d/*
