@@ -183,7 +183,10 @@ bindsym $mod+x exec lockscreen.sh
 bindsym $mod+g exec $term -e btop
 
 # BitWarden
-bindsym $mod+Shift+b exec "swaymsg workspace number 7 && notify-send -i /usr/share/icons/hicolor/128x128/apps/bitwarden.png 'Password keymap pressed' 'Launching Bitwarden...' && bitwarden-desktop"
+bindsym $mod+b exec "swaymsg workspace number 7 && notify-send -i /usr/share/icons/hicolor/128x128/apps/bitwarden.png 'Password keymap pressed' 'Launching Bitwarden...' && bitwarden-desktop"
+
+# Obsidian
+bindsym $mod+n exec "swaymsg workspace number 5 && notify-send -i /usr/share/pixmaps/obsidian.png 'Notes keymap pressed' 'Launching Obsidian...' && obsidian"
 
 # Screenshots
 bindsym Print exec SCREENSHOT_MODE=normal screenshot.sh
@@ -213,7 +216,7 @@ bindsym XF86Calculator exec qalculate-gtk
 #bindsym $mod+v exec ~/.config/rofi/clipboard/clipboard.sh
 
 # Play a small audio file (useful to verify volume, output...)
-bindsym $mod+b exec cvlc --play-and-exit /usr/share/sounds/freedesktop/stereo/message-new-instant.oga
+bindsym $mod+Shift+b exec cvlc --play-and-exit /usr/share/sounds/freedesktop/stereo/message-new-instant.oga
 
 # Borders Tokyo night theme found here:
 # https://github.com/stronk-dev/Tokyo-Night-Linux/blob/master/.config/sway/config
