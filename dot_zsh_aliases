@@ -7,11 +7,10 @@
 
 # color and human support
 alias dmesg='dmesg -H'
-alias df='df --human-readable'
 alias free='free -h'
 alias ls='ls --classify --tabsize=0 --literal --color=auto --human-readable'
-alias sl='ls'
-alias ks='ls'
+alias sl='l'
+alias ks='l'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -36,8 +35,21 @@ alias vi='nvim'
 alias less='less -RQ'
 alias rcp='rsync -P --recursive'
 alias md='mkdir -p'
-alias l='ls -lrth'
-alias ll='ls -lArth'
+
+# ls replacement
+alias l='eza'
+alias ll='eza --long --header --icons --git'
+alias lt='eza --tree --icons --level 2'
+
+# cat replacement
+# use "cat -pp" for old-school cat
+alias cat='bat'
+
+# df replacement
+alias df='duf'
+
+# du replacement
+alias du='dust'
 
 # sudo
 alias svim='sudo vim'
@@ -130,3 +142,4 @@ alias pinball='wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Microsoft\ Games/Pin
 alias zzz='sudo systemctl suspend'
 alias talk='espeak -v fr-fr'
 alias k='kodi -standalone'
+alias step='step-cli'

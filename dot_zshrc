@@ -148,3 +148,6 @@ eval "$(zoxide init zsh)"
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# shell history with ctrl-r
+eval "$(mcfly init zsh)"
