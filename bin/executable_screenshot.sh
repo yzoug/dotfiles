@@ -25,5 +25,6 @@ if [[ ${SCREENSHOT_MODE} == "full" ]]; then
 elif [[ ${SCREENSHOT_MODE} == "no-clip" ]]; then
     echo -n "${FOCUSED_MONITOR_POSITION} ${FOCUSED_MONITOR_MODE}" | grim -g - - > "${SCREENSHOT_FILENAME}"
 else
-    slurp | grim -g - - | tee >(wl-copy) > "${SCREENSHOT_FILENAME}" && notify-send -i "${SCREENSHOT_FILENAME}" "Screenshot of region taken" -t 3000
+    slurp | grim -g - "${SCREENSHOT_FILENAME}"
+    [[ $? -eq 0 ]] && wl-copy < "${SCREENSHOT_FILENAME}" && notify-send -i "${SCREENSHOT_FILENAME}" "Screenshot of region taken" -t 3000 || notify-send "Error" "Failed to take screenshot"
 fi
