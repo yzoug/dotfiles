@@ -5,7 +5,7 @@ Hello! These are my dotfiles. Here is some of the software I use:
 - sway as a Wayland compositor
 - waybar as a status bar
 - alacritty as a terminal emulator
-- neovim as my editor
+- neovim as my editor (has [its own config repo](https://github.com/yzoug/kickstart.nvim) forked from kickstart.nvim)
 - zsh as my shell
 - tmux as a multiplexer
 - the Tokyo Night colorscheme
