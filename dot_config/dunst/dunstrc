@@ -8,6 +8,7 @@ follow = mouse
 width = (300, 600)
 icon_theme = Adwaita
 enable_recursive_icon_lookup = true
+timeout = 5s
 
 [urgency_low]
 background = "#24273a"
@@ -21,3 +22,4 @@ foreground = "#cad3f5"
 background = "#24273a"
 foreground = "#cad3f5"
 frame_color = "#f5a97f"
+timeout = 30s
