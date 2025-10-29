@@ -93,7 +93,7 @@ conf() {
             pacman)       sudo $EDITOR /etc/pacman.conf ;;
             profile)      sudo $EDITOR /etc/profile ;;
             refind)       sudo $EDITOR /boot/refind_linux.conf ;;
-            script)       shift && $EDITOR ~/bin/$1 && [[ -f ~/bin/$1 ]] && chmod +x ~/bin/$1;;
+            script)       shift && $EDITOR ~/bin/$1 && [[ -f ~/bin/$1 ]] && chmod +x ~/bin/$1 && chezmoi add ~/bin/$1 ;;
             ssh)          $EDITOR ~/.ssh/config ;;
             starship)     CONFEDITOR ~/.config/starship.toml ;;
             sudo)         sudo visudo ;;
