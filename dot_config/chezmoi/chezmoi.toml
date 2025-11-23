@@ -1,0 +1,3 @@
+[data]
+    git_email = "git@zoug.fr"
+    ssh_private_key_filepath = "~/.ssh/ionos_id_ed25519"

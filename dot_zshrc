@@ -146,6 +146,9 @@ eval "$(starship init zsh)"
 # zoxide (smarter cd)
 eval "$(zoxide init zsh)"
 
+# fuzzy finder
+source <(fzf --zsh)
+
 # direnv
 eval "$(direnv hook zsh)"
 
