@@ -36,9 +36,15 @@ alias less='less -RQ'
 alias rcp='rsync -P --recursive'
 alias md='mkdir -p'
 
+# git
+# my policy is to keep git aliases in the git config file
+alias g='git'
+alias lg='lazygit'
+
 # ls replacement
 alias l='eza'
 alias ll='eza --long --header --icons --git'
+alias la='eza -a --long --header --icons --git'
 alias lt='eza --tree --icons --level 2'
 
 # cat replacement

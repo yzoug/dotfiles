@@ -5,9 +5,9 @@
 #
 
 [user]
-    email = git@zoug.fr
+    email = {{ .git_email }}
     name = Yassine Zouggari
-    signingkey = ~/.ssh/ionos_id_ed25519.pub
+    signingkey = {{ .ssh_private_key_filepath }}.pub
 [alias]
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
@@ -15,6 +15,7 @@
     adog = log --graph --oneline --decorate --all
     fl = log -u # file log
     lf = diff-tree --no-commit-id --name-status -r # list files
+    d = diff
     dc = diff --cached
     dlc = diff --cached HEAD^ # diff last commit
     conflict = diff --name-only --diff-filter=U
