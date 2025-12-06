@@ -89,7 +89,8 @@ conf() {
             hosts)        sudo $EDITOR /etc/hosts ;;
             mc)           $EDITOR ~/.mc/config.json ;;
             minio)        $EDITOR ~/.mc/config.json ;;
-            nvim)         $EDITOR ~/.config/nvim/init.lua ;;
+            nvim)         $EDITOR ~/.config/nvim/init.lua ;; # managed in seperate repo out of chezmoi
+            nvimp)        shift && $EDITOR ~/.config/nvim/lua/custom/plugins/$1.lua ;;
             pacman)       sudo $EDITOR /etc/pacman.conf ;;
             profile)      sudo $EDITOR /etc/profile ;;
             refind)       sudo $EDITOR /boot/refind_linux.conf ;;
@@ -154,3 +155,6 @@ eval "$(direnv hook zsh)"
 
 # shell history with ctrl-r
 eval "$(mcfly init zsh)"
+
+# pipx completions
+eval "$(register-python-argcomplete pipx)"

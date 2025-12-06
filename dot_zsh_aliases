@@ -86,6 +86,7 @@ alias -g NUL='&> /dev/null'
 alias -g T='| tail -f'
 alias -g L='| less'
 alias -g G='| grep'
+alias -g J='| jq'
 
 # pacman aliases (from wiki then me)
 ## Synchronize with repositories and then upgrade packages that are out of date on the local system.
