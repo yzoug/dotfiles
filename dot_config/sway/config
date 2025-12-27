@@ -127,7 +127,7 @@ bindsym $mod+Alt+v splitv
 # Switch the current container between different layout styles
 bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+e layout toggle split
 
 # Make the current focus fullscreen
 bindsym $mod+f fullscreen
@@ -181,6 +181,12 @@ bindsym $mod+x exec lockscreen.sh
 
 # btop
 bindsym $mod+g exec $term -e btop
+
+# nvtop
+bindsym $mod+Shift+g exec $term -e nvtop
+
+# thunar
+bindsym $mod+e exec thunar
 
 # BitWarden
 bindsym $mod+b exec "swaymsg workspace number 7 && notify-send -i /usr/share/icons/hicolor/128x128/apps/bitwarden.png 'Password keymap pressed' 'Launching Bitwarden...' && bitwarden-desktop"
