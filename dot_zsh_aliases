@@ -89,42 +89,35 @@ alias -g G='| grep'
 alias -g J='| jq'
 
 # pacman aliases (from wiki then me)
+# use yay instead of pacman
 ## Synchronize with repositories and then upgrade packages that are out of date on the local system.
-alias pacupg='sudo pacman -Syu'
+alias pacupg='yay -Syu'
 ## Download specified package(s) as .tar.xz ball
-alias pacdl='pacman -Sw'
+alias pacdl='yay -Sw'
 ## Install specific package(s) from the repositories
-alias pacin='sudo pacman -S'
+alias pacin='yay -S'
 ## Install specific package not from the repositories but from a file 
-alias pacins='sudo pacman -U'
+alias pacins='yay -U'
 ## Remove the specified package(s), retaining its configuration(s) and required dependencies
-alias pacre='sudo pacman -R'
+alias pacre='yay -R'
 ## Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias pacrem='sudo pacman -Rns'
+alias pacrem='yay -Rns'
 ## Display information about a given package in the repositories
-alias pacrep='pacman -Si'
+alias pacrep='yay -Si'
 ## Search for package(s) in the repositories
-alias pacreps='pacman -Ss'
+alias pacreps='yay -Ss'
 ## Display information about a given package in the local database
-alias pacloc='pacman -Qi'
+alias pacloc='yay -Qi'
 ## Search for package(s) in the local database
-alias paclocs='pacman -Qs'
+alias paclocs='yay -Qs'
 ## List all packages which are orphaned
-alias paclo='pacman -Qdt'
+alias paclo='yay -Qdt'
 ## Clean cache - delete all the package files in the cache
-alias pacc='sudo pacman -Scc'
+alias pacc='yay -Scc'
 ## List all files installed by a given package
-alias paclf='pacman -Ql'
+alias paclf='yay -Ql'
 ## Show package(s) owning the specified file(s)
-alias pacown='pacman -Qo'
-## Mark one or more installed packages as explicitly installed 
-alias pacexpl='pacman -D --asexp'
-## Mark one or more installed packages as non explicitly installed
-alias pacimpl='pacman -D --asdep'
-## Update and refresh the local package and ABS databases against repositories
-alias pacupd='sudo pacman -Sy && sudo abs'
-## Install given package(s) as dependencies
-alias pacinsd='sudo pacman -S --asdeps'
+alias pacown='yay -Qo'
 ## Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 alias pacmir='sudo pacman -Syy'
 ## Remove packages that aren't needed (and not installed directly)
