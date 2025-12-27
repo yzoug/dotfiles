@@ -155,6 +155,3 @@ eval "$(direnv hook zsh)"
 
 # shell history with ctrl-r
 eval "$(mcfly init zsh)"
-
-# pipx completions
-eval "$(register-python-argcomplete pipx)"
