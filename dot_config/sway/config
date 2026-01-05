@@ -198,10 +198,18 @@ bindsym $mod+n exec "swaymsg workspace number 5 && notify-send -i /usr/share/pix
 bindsym Print exec SCREENSHOT_MODE=normal screenshot.sh
 bindsym $mod+Print exec SCREENSHOT_MODE=full screenshot.sh
 
+# Music
 # Volume up, down and mute
 bindsym XF86AudioLowerVolume exec pamixer -d 5
 bindsym XF86AudioRaiseVolume exec pamixer -i 5
 bindsym XF86AudioMute exec pamixer -t
+# Other media keybindings sent to playerctl
+# Adds support for bluetooth headset (mpris-proxy sometimes needed)
+# list of XF86 symbols: https://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols
+bindsym XF86AudioPlay exec playerctl -a play-pause
+bindsym XF86AudioPause exec playerctl -a play-pause
+bindsym XF86AudioNext exec playerctl -a next
+bindsym XF86AudioPrev exec playerctl -a previous
 
 # Monitor brightness
 bindsym XF86MonBrightnessDown exec brightnessctl -c backlight s 10%-
