@@ -188,8 +188,8 @@ bindsym $mod+Shift+g exec $term -e nvtop
 # thunar
 bindsym $mod+e exec thunar
 
-# BitWarden
-bindsym $mod+b exec "swaymsg workspace number 7 && notify-send -i /usr/share/icons/hicolor/128x128/apps/bitwarden.png 'Password keymap pressed' 'Launching Bitwarden...' && bitwarden-desktop"
+# Navidrome
+bindsym $mod+q exec "swaymsg workspace number 9 && notify-send -i /usr/share/icons/breeze-dark/emblems/16/emblem-music-symbolic.svg 'Music keymap pressed' 'Launching feishin...' && feishin"
 
 # Obsidian
 bindsym $mod+n exec "swaymsg workspace number 5 && notify-send -i /usr/share/pixmaps/obsidian.png 'Notes keymap pressed' 'Launching Obsidian...' && obsidian"
