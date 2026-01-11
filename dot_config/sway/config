@@ -189,7 +189,7 @@ bindsym $mod+Shift+g exec $term -e nvtop
 bindsym $mod+e exec thunar
 
 # Navidrome
-bindsym $mod+q exec "swaymsg workspace number 9 && notify-send -i /usr/share/icons/breeze-dark/emblems/16/emblem-music-symbolic.svg 'Music keymap pressed' 'Launching feishin...' && feishin"
+bindsym $mod+b exec "swaymsg workspace number 9 && notify-send -i /usr/share/icons/breeze-dark/emblems/16/emblem-music-symbolic.svg 'Music keymap pressed' 'Launching feishin...' && feishin"
 
 # Obsidian
 bindsym $mod+n exec "swaymsg workspace number 5 && notify-send -i /usr/share/pixmaps/obsidian.png 'Notes keymap pressed' 'Launching Obsidian...' && obsidian"
@@ -264,8 +264,7 @@ assign [class="Vivaldi-stable"] workspace number 3
 assign [app_id="LibreWolf"] workspace number 3
 assign [app_id="thunderbird"] workspace number 4
 assign [class="obsidian"] workspace number 5
-assign [class="Bitwarden"] workspace number 7
-assign [class="Spotify"] workspace number 9
+assign [app_id="feishin"] workspace number 9
 
 ## Startup execs
 #
