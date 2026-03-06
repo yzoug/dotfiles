@@ -64,8 +64,11 @@ floating_modifier $mod normal
 # Reload the configuration file
 bindsym $mod+Shift+c reload
 
-# Exit sway, suspend, reboot, or poweroff
-bindsym $mod+Escape exec swaynag -t warning -m 'You pressed the exit shortcut. Do you want to...' \
+# Graphical logout management using wlogout
+bindsym $mod+Escape exec wlogout
+
+# Exit sway, suspend, reboot, or poweroff using swaynag
+bindsym $mod+Shift+Escape exec swaynag -t warning -m 'You pressed the exit shortcut. Do you want to...' \
     -B 'Poweroff?' 'systemctl poweroff' \
     -B 'Reboot?' 'systemctl reboot' \
     -B 'Suspend?' 'systemctl suspend'
