@@ -10,7 +10,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term ghostty
 # Your preferred application launcher
 # rofi config from sameemul-haque dotfiles
 set $menu ~/.config/rofi/launchers/launcher.sh | xargs swaymsg exec --
