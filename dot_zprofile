@@ -1,3 +1,6 @@
+# run ssh-agent on login
+eval $(ssh-agent)
+
 # from https://wiki.archlinux.org/title/Sway#Automatically_on_TTY_login
 if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] ; then
     exec sway
