@@ -246,7 +246,7 @@ client.focused_inactive  #16161d #16161d #c0caf5 #16161d #16161d
 client.unfocused #16161d #16161d #c0caf5 #16161d #16161d
 
 ## Gaps
-gaps inner 5
+gaps inner 3
 gaps outer 1
 gaps top 1
 gaps bottom 1
