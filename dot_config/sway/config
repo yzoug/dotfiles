@@ -264,10 +264,11 @@ for_window [shell="xwayland"] title_format "[XWayland] %title"
 # Assign apps to specific workspaces
 # get app_id or class using: swaymsg -t get_tree
 assign [class="Vivaldi-stable"] workspace number 3
-assign [app_id="LibreWolf"] workspace number 3
-assign [app_id="thunderbird"] workspace number 4
-assign [class="obsidian"] workspace number 5
+assign [app_id="firefox"] workspace number 3
+assign [app_id="Proton Mail"] workspace number 4
+assign [app_id="obsidian"] workspace number 5
 assign [app_id="feishin"] workspace number 9
+assign [app_id="Audacious"] workspace number 9
 
 ## Startup execs
 #
