@@ -268,6 +268,7 @@ assign [app_id="firefox"] workspace number 3
 assign [class="Proton Mail"] workspace number 4
 assign [app_id="obsidian"] workspace number 5
 assign [app_id="signal"] workspace number 8
+assign [app_id="Slack"] workspace number 8
 assign [app_id="feishin"] workspace number 9
 assign [class="Audacious"] workspace number 9
 
