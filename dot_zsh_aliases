@@ -140,7 +140,6 @@ alias k='kubectl'
 
 # misc
 alias cme='crackmapexec'
-alias fehs='feh --fullscreen --auto-zoom --draw-filename' #feh -FZd
 alias pinball='wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Microsoft\ Games/Pinball/pinball.exe'
 alias zzz='sudo systemctl suspend'
 alias talk='espeak -v fr-fr'
