@@ -89,35 +89,35 @@ alias -g G='| grep'
 alias -g J='| jq'
 
 # pacman aliases (from wiki then me)
-# use yay instead of pacman
+# use paru instead of pacman
 ## Synchronize with repositories and then upgrade packages that are out of date on the local system.
-alias pacupg='yay -Syu'
+alias pacupg='paru -Syu --upgrademenu'
 ## Download specified package(s) as .tar.xz ball
-alias pacdl='yay -Sw'
+alias pacdl='paru -Sw'
 ## Install specific package(s) from the repositories
-alias pacin='yay -S'
+alias pacin='paru -S'
 ## Install specific package not from the repositories but from a file 
-alias pacins='yay -U'
+alias pacins='paru -U'
 ## Remove the specified package(s), retaining its configuration(s) and required dependencies
-alias pacre='yay -R'
+alias pacre='paru -R'
 ## Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias pacrem='yay -Rns'
+alias pacrem='paru -Rns'
 ## Display information about a given package in the repositories
-alias pacrep='yay -Si'
+alias pacrep='paru -Si'
 ## Search for package(s) in the repositories
-alias pacreps='yay -Ss'
+alias pacreps='paru -Ss'
 ## Display information about a given package in the local database
-alias pacloc='yay -Qi'
+alias pacloc='paru -Qi'
 ## Search for package(s) in the local database
-alias paclocs='yay -Qs'
+alias paclocs='paru -Qs'
 ## List all packages which are orphaned
-alias paclo='yay -Qdt'
+alias paclo='paru -Qdt'
 ## Clean cache - delete all the package files in the cache
-alias pacc='yay -Scc'
+alias pacc='paru -Scc'
 ## List all files installed by a given package
-alias paclf='yay -Ql'
+alias paclf='paru -Ql'
 ## Show package(s) owning the specified file(s)
-alias pacown='yay -Qo'
+alias pacown='paru -Qo'
 ## Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 alias pacmir='sudo pacman -Syy'
 ## Remove packages that aren't needed (and not installed directly)
