@@ -5,10 +5,10 @@
     "height": 44,
     "modules-left": [
         "custom/logo",
-        "sway/workspaces",
+        "sway/workspaces"
     ],
     "modules-center": [
-        "sway/window",
+        "sway/window"
     ],
     "modules-right": [
         "tray",
@@ -59,7 +59,7 @@
             "default": ["","",""]
         },
         "on-click": "pamixer -t",
-        "scroll-step": 1,
+        "scroll-step": 1
     },
     "backlight": {
         "device": "intel_backlight",
@@ -115,7 +115,7 @@
         "custom/ip",
         "network",
         "clock",
-        "mpris",
+        "mpris"
     ],
     "modules-right": [],
     "cpu": {
@@ -163,10 +163,10 @@
              "default": "🎵",
              "spotify": " ",
              "vlc": "󰕼 ",
-             "firefox": "󰈹 ",
+             "firefox": "󰈹 "
         },
         "status-icons": {
              "paused": " "
-        },
+        }
     }
 }]
