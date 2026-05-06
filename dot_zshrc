@@ -63,6 +63,7 @@ setopt share_history
 
 # aliases
 source ~/.zsh_aliases
+[ -f ~/.zsh_aliases_work ] && source ~/.zsh_aliases_work
 
 # allows for easy config edits using:
 # * either the CONFEDITOR f'n for chezmoi managed files
@@ -80,6 +81,7 @@ conf() {
     while [[ -n $1 ]] ; do
         case $1 in
             alias)        CONFEDITOR ~/.zsh_aliases && source ~/.zsh_aliases  ;;
+            work-alias)   $EDITOR ~/.zsh_aliases_work && source ~/.zsh_aliases_work  ;;
             alacritty)    CONFEDITOR ~/.config/alacritty/alacritty.toml ;;
             dns)          sudo $EDITOR /etc/resolv.conf ;;
             dunst)        CONFEDITOR ~/.config/dunst/dunstrc ;;
