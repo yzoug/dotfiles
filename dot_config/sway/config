@@ -197,6 +197,9 @@ bindsym $mod+b exec "swaymsg workspace number 9 && notify-send -i /usr/share/ico
 # Obsidian
 bindsym $mod+n exec "swaymsg workspace number 5 && notify-send -i /usr/share/pixmaps/obsidian.png 'Notes keymap pressed' 'Launching Obsidian...' && obsidian"
 
+# Proton Mail
+bindsym $mod+m exec "swaymsg workspace number 4 && notify-send -i /usr/share/proton-mail/proton-spinner.svg 'Mail keymap pressed' 'Launching Proton Mail...' && proton-mail"
+
 # Screenshots
 bindsym Print exec SCREENSHOT_MODE=normal screenshot.sh
 bindsym $mod+Print exec SCREENSHOT_MODE=full screenshot.sh
