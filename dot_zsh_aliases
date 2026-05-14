@@ -57,6 +57,9 @@ alias df='duf'
 # du replacement
 alias du='dust'
 
+# dig replacement
+alias dig='dog'
+
 # sudo
 alias svim='sudo vim'
 alias svi='sudo nvim'
@@ -85,8 +88,9 @@ alias tarbz2='tar -jxvf'
 alias -g NUL='&> /dev/null'
 alias -g T='| tail -f'
 alias -g L='| less'
-alias -g G='| grep'
+alias -g G='| rg'
 alias -g J='| jq'
+alias -g JL='| jq -C | less'
 
 # pacman aliases (from wiki then me)
 # use paru instead of pacman
