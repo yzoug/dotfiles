@@ -4,6 +4,15 @@
 # show time
 [time]
 disabled = false
+format = ' [$time]($style) '
+{{ if eq .chezmoi.hostname "zougArch" -}}
+# ansi colors: https://i.sstatic.net/KTSQa.png
+style = 'bold 208'
+{{- else if eq .chezmoi.hostname "vogsphere" -}}
+style = 'bold 219'
+{{- else if eq .chezmoi.hostname "zougecov" -}}
+style = 'bold 22'
+{{- end }}
 
 # battery shown in yellow below 30%, red below 20%
 [[battery.display]]
