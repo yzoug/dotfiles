@@ -150,9 +150,9 @@
         "interval": "once",
         "signal": 1,
         "format": "  {}",
-        "exec": "cat /tmp/remote-ip.log 2>/dev/null || echo Click to get remote IP",
+        "exec": "cat /tmp/remote-ipv4.log 2>/dev/null || echo Click to get remote IP",
         "tooltip": false,
-        "on-click": "curl -s icanhazip.com | tee /tmp/remote-ip.log && pkill -RTMIN+1 waybar",
+        "on-click": "curl -s ipv4.icanhazip.com | tee /tmp/remote-ipv4.log && pkill -RTMIN+1 waybar",
         "spacing": 5
     },
     "mpris": {
