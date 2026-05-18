@@ -12,8 +12,10 @@
     ],
     "modules-right": [
         "tray",
+        {{ if ne .chezmoi.hostname "vogsphere" -}}
         "backlight",
         "battery",
+        {{- end }}
         "wireplumber"
     ],
     "sway/workspaces": {
