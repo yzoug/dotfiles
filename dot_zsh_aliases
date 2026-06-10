@@ -17,7 +17,7 @@ alias egrep='egrep --color=auto'
 
 # ripgrep
 alias rg='rg --smart-case'
-alias rgg='rg --no-ignore --search-zip'
+alias rgg='rg --hidden --no-ignore --search-zip'
 
 # ssh
 alias ssh='TERM=xterm-256color ssh'
