@@ -42,7 +42,7 @@ alias g='git'
 alias lg='lazygit'
 
 # ls replacement
-alias l='eza'
+alias l='eza --long --header --icons --git'
 alias ll='eza --long --header --icons --git'
 alias la='eza -a --long --header --icons --git'
 alias lt='eza --tree --icons --level 2'
