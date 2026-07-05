@@ -26,7 +26,6 @@ HISTSIZE=100000
 SAVEHIST=100000
 setopt appendhistory
 setopt autocd
-setopt completealiases
 unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
@@ -41,7 +40,6 @@ setopt auto_param_keys
 setopt auto_param_slash
 setopt auto_remove_slash
 setopt no_bash_auto_list
-setopt complete_aliases
 setopt complete_in_word
 setopt glob_complete
 setopt hash_list_all
