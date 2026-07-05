@@ -153,8 +153,11 @@ eval "$(zoxide init zsh)"
 # fuzzy finder
 source <(fzf --zsh)
 
-# nvm
-source /usr/share/nvm/init-nvm.sh
+# Lazy-load nvm
+nvm() {
+    source /usr/share/nvm/init-nvm.sh
+    nvm "$@"
+}
 
 # direnv
 eval "$(direnv hook zsh)"
