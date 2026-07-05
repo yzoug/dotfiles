@@ -33,7 +33,6 @@ bindkey -v
 
 # setopts
 # see `man zshoptions`
-setopt VI
 setopt nocorrectall
 setopt always_last_prompt
 setopt always_to_end
