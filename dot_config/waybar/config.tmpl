@@ -113,6 +113,7 @@
     "modules-left": [],
     "modules-center": [
         "memory",
+        "custom/gpu",
         "cpu",
         "custom/ip",
         "network",
@@ -125,6 +126,11 @@
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
         "on-click": "alacritty -e btop",
         "interval": 5
+    },
+    "custom/gpu": {
+        "format": " {}",
+        "exec": "~/.cargo/bin/gpu-usage-waybar --tooltip-format 'GPU: {gpu_utilization}%\nMEM USED: {mem_used}/{mem_total} MiB ({mem_utilization}%)\nMEM R/W: {mem_rw}%\nDEC: {decoder_utilization}%\nENC: {encoder_utilization}%\nTEMP: {temperature}°C\nPOWER: {power}W\nPSTATE: {p_state}\nPLEVEL: {p_level}\nFAN SPEED: {fan_speed}%\nTX: {tx} MiB/s\nRX: {rx} MiB/s'",
+        "return-type": "json"
     },
     "memory": {
         "format": "  {}%",
